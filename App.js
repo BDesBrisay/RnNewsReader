@@ -12,8 +12,8 @@ class App extends React.Component {
   state = {
     index: 0,
     routes: [
-      { key: 'home', title: 'Home', icon: 'home' },
-      { key: 'signin', title: 'Sign In', icon: 'panda' }
+      { key: 'home', title: 'Home', icon: 'home', color: '#32a875' },
+      { key: 'signin', title: 'Sign In', icon: 'account_circle', color: '#4e32a8' }
     ],
   };
 
@@ -30,6 +30,8 @@ class App extends React.Component {
         navigationState={this.state}
         onIndexChange={this._handleIndexChange}
         renderScene={this._renderScene}
+        shifting={true}
+        labeled={true}
       />
     );
   }
