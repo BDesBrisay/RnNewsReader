@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SafeAreaView, StatusBar, Image } from 'react-native';
-import { Title, Button, TextInput } from 'react-native-paper';
+import { Title, Button, TextInput, useTheme } from 'react-native-paper';
 
 import { signIn } from '../../utils/userState.js';
 import { companyLogo } from '../../utils/constants.js';
@@ -31,7 +31,9 @@ const SignIn = ({ history }) => {
           mode="contained"
           onPress={() => {
             signIn({
-              user: { name: 'username' }
+              user: { 
+                username 
+              }
             });
             history.push('/Home');
           }}
@@ -42,7 +44,7 @@ const SignIn = ({ history }) => {
           mode="outlined" 
           onPress={() => history.push('/SignUp')}
         >
-          Register
+          Create Account
         </Button>
       </SafeAreaView>
     </>
