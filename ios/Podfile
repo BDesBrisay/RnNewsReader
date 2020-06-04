@@ -79,7 +79,7 @@ target 'RnNewsReader' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
-  pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
+  # pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
 
   target 'RnNewsReaderTests' do
     inherit! :complete
