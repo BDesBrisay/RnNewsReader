@@ -1,4 +1,5 @@
-import React from 'react';
+import 'react-native-gesture-handler';
+import * as React from 'react';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
@@ -58,10 +59,11 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Tabs" component={TabsNav} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
+/*<Stack.Screen name="Tabs" component={TabsNav} />*/''
 
 export default App;
