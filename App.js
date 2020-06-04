@@ -59,6 +59,7 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Tabs" component={TabsNav} />
       </Stack.Navigator>
     </NavigationContainer>
   );

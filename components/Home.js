@@ -1,13 +1,16 @@
 import React from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
-import { Title } from 'react-native-paper';
+import { Title, Text, TouchableRipple } from 'react-native-paper';
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <Title>Home</Title>
+        <TouchableRipple onPress={() => navigation.navigate('Tabs')}>
+          <Text>Tabs</Text>
+        </TouchableRipple>
       </SafeAreaView>
     </>
   );
