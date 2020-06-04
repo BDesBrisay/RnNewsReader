@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
 import { Title, Text, Button } from 'react-native-paper';
 
 import { signOut } from '../../utils/userState.js';
 
 const Home = ({ history }) => {
+  useEffect(() => {
+    // component did mount
+    // fetch data
+  }, [])
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
