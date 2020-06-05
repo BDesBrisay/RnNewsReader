@@ -23,22 +23,22 @@ const gridItems = [
   },
   {
     route: '/Usage',
-    label: 'My Usage',
+    label: 'Usage',
     icon: <AIcon name="dashboard" size={24} />
   },
   {
     route: '/Devices',
-    label: 'My Devices',
+    label: 'Devices',
     icon: <Icon name="cpu" size={24} />
   },
   {
     route: '/Settings',
-    label: 'Get Help',
+    label: 'Settings',
     icon: <Icon name="sliders" size={24} />
   },
   {
     route: '/Account',
-    label: 'My Account',
+    label: 'Account',
     icon: <Icon name="user" size={24} />
   },
 ]
@@ -64,6 +64,9 @@ const Home = ({ history }) => {
                 </>
               </Link>
             ))}
+          </View>
+          <View style={styles.list}>
+            
           </View>
           <Title>Home</Title>
           <Button mode="contained" onPress={() => {
@@ -111,6 +114,9 @@ const styles = StyleSheet.create({
   },
   gridText: {
     marginTop: 6
+  },
+  list: {
+    display: 'flex'
   }
 });
 
