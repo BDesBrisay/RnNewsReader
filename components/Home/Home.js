@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { View, SafeAreaView, StatusBar, StyleSheet, Image, Dimensions } from 'react-native';
-import { Title, Text, Button, Colors, useTheme } from 'react-native-paper';
+import { Text } from 'react-native-paper';
 import { Link } from 'react-router-native';
 import Icon from 'react-native-vector-icons/Feather';
 import AIcon from 'react-native-vector-icons/AntDesign';
 
-import { signOut } from '../../utils/userState.js';
 import { logoDark } from '../../utils/constants.js';
 
 const { width } = Dimensions.get('window');
@@ -68,13 +67,6 @@ const Home = ({ history }) => {
           <View style={styles.list}>
             
           </View>
-          <Title>Home</Title>
-          <Button mode="contained" onPress={() => {
-            signOut();
-            history.push('/');
-          }}>
-            <Text>Sign out</Text>
-          </Button>
         </View>
       </SafeAreaView>
     </>

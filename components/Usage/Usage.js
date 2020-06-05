@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
-import { Text } from 'react-native-paper';
+import { Text, Button } from 'react-native-paper';
 
 const Usage = ({ history }) => {
   return (
@@ -8,6 +8,9 @@ const Usage = ({ history }) => {
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <Text>MY USAGE PAGE</Text>
+        <Button onPress={() => history.goBack()}>
+          Back
+        </Button>
       </SafeAreaView>
     </>
   );
