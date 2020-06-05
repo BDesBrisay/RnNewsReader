@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/Feather';
 import AIcon from 'react-native-vector-icons/AntDesign';
 
 import { logoDark } from '../../utils/constants.js';
+import ListItem from './ListItem.js';
 
 const { width } = Dimensions.get('window');
 
@@ -65,7 +66,13 @@ const Home = ({ history }) => {
             ))}
           </View>
           <View style={styles.list}>
-            
+            <ListItem 
+              onClick={() => history.navigate('/Help')}
+              text="Upgrade &amp; Save"
+              subtext="Choose the plan that is right for you"
+              leftIcon={<Icon name="bar-chart" size={28} />}
+              rightIcon={<Icon name="external-link" size={20} />}
+            />
           </View>
         </View>
       </SafeAreaView>
@@ -108,7 +115,8 @@ const styles = StyleSheet.create({
     marginTop: 6
   },
   list: {
-    display: 'flex'
+    display: 'flex',
+    marginTop: 24
   }
 });
 
