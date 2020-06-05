@@ -6,6 +6,7 @@ import AuthRoute from './components/Auth/AuthRoute';
 import SignIn from './components/Auth/SignIn';
 import SignUp from './components/Auth/SignUp';
 import Home from './components/Home/Home';
+import Help from './components/Help/Help';
 
 import { primary, accent } from './utils/constants.js';
 
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/" exact component={SignIn} />
           <Route path="/SignUp" component={SignUp} />
           <AuthRoute path="/Home" component={Home} />
+          <AuthRoute path="/Help" component={Help} />
         </BackButton>
       </NativeRouter>
     </PaperProvider>

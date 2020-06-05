@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { SafeAreaView, StatusBar, Image } from 'react-native';
-import { Title, Button, TextInput, useTheme } from 'react-native-paper';
+import { Title, Button, TextInput } from 'react-native-paper';
 
 import { signIn } from '../../utils/userState.js';
-import { companyLogo } from '../../utils/constants.js';
+import { logoDark } from '../../utils/constants.js';
 
 const SignIn = ({ history }) => {
   const [username, setUsername] = useState('');
@@ -13,7 +13,7 @@ const SignIn = ({ history }) => {
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-        <Image source={companyLogo} />
+        <Image source={logoDark} />
         <Title>SignIn</Title>
         <TextInput 
           mode="outlined"
