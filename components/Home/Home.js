@@ -14,41 +14,36 @@ const gridItems = [
   {
     route: '/Help',
     label: 'Get Help',
-    iconName: 'heart'
+    icon: <Icon name="heart" size={24} />
   },
   {
     route: '/Payments',
     label: 'Pay Online',
-    iconName: 'credit-card'
+    icon: <Icon name="credit-card" size={24} />
   },
   {
     route: '/Usage',
     label: 'My Usage',
-    iconName: 'dashboard'
+    icon: <AIcon name="dashboard" size={24} />
   },
   {
     route: '/Devices',
     label: 'My Devices',
-    iconName: 'cpu'
+    icon: <Icon name="cpu" size={24} />
   },
   {
     route: '/Settings',
     label: 'Get Help',
-    iconName: 'sliders'
+    icon: <Icon name="sliders" size={24} />
   },
   {
     route: '/Account',
     label: 'My Account',
-    iconName: 'user'
+    icon: <Icon name="user" size={24} />
   },
 ]
 
 const Home = ({ history }) => {
-  useEffect(() => {
-    // component did mount
-    // fetch data
-  }, [])
-
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -64,10 +59,7 @@ const Home = ({ history }) => {
                 underlayColor="#e8e8e8"
               >
                 <>
-                  {item.label === 'My Usage' 
-                    ? <AIcon name={item.iconName} size={24} />
-                    : <Icon name={item.iconName} size={24} />
-                  }
+                  {item.icon}
                   <Text style={styles.gridText}>{item.label}</Text>
                 </>
               </Link>
