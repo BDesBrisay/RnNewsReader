@@ -24,8 +24,8 @@ const ListItem = ({
           </View>
         : ''}
         <View style={styles.textContain}>
-          {text ? <Text style={styles.text}>{text}</Text> : ''}
-          {subtext ? <Text style={styles.subtext}>{subtext}</Text> : ''}
+          {text && <Text style={styles.text}>{text}</Text>}
+          {subtext && <Text style={styles.subtext}>{subtext}</Text>}
         </View>
         {rightIcon ?
           <View style={styles.rightIcon}>
@@ -62,10 +62,11 @@ const styles = StyleSheet.create({
   },
   subtext: {
     color: '#444',
-    fontSize: 12
+    fontSize: 12,
+    marginTop: 3
   },
   rightIcon: {
-    width: 60,
+    minWidth: 60,
     height: 60,
     display: 'flex',
     alignItems: 'center',

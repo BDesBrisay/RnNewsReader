@@ -1,11 +1,11 @@
-import React from 'react';
-import { View, SafeAreaView, StatusBar, StyleSheet, Image, Dimensions } from 'react-native';
-import { Text } from 'react-native-paper';
+import React, { useState } from 'react';
+import { View, ScrollView, SafeAreaView, StatusBar, StyleSheet, Image, Dimensions } from 'react-native';
+import { Text, Switch } from 'react-native-paper';
 import { Link } from 'react-router-native';
 import Icon from 'react-native-vector-icons/Feather';
 import AIcon from 'react-native-vector-icons/AntDesign';
 
-import { logoDark } from '../../utils/constants.js';
+import { companyName, logoDark, primary } from '../../utils/constants.js';
 import ListItem from './ListItem.js';
 
 const { width } = Dimensions.get('window');
@@ -44,11 +44,13 @@ const gridItems = [
 ]
 
 const Home = ({ history }) => {
+  const [networkEnabled, setNetworkEnabled] = useState(false);
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-        <View style={styles.contain}>
+        <ScrollView contentContainerStyle={styles.contain}>
           <Image source={logoDark} style={styles.logo} />
           <View style={styles.grid}>
             {gridItems.map((item, i) => (
@@ -73,8 +75,39 @@ const Home = ({ history }) => {
               leftIcon={<Icon name="bar-chart" size={28} />}
               rightIcon={<Icon name="external-link" size={20} />}
             />
+            <ListItem 
+              onClick={() => history.navigate('/Help')}
+              text="Earn up to $250!"
+              subtext={`Refer friends to ${companyName}`}
+              leftIcon={
+                <View style={styles.moneyIcon}>
+                  <Icon name="dollar-sign" size={22} color="white" />
+                </View>
+              }
+              rightIcon={<Icon name="chevron-right" size={20} />}
+              style={{ backgroundColor: '#e3f2cb' }}
+            />
+            <ListItem 
+              onClick={() => setNetworkEnabled(!networkEnabled)}
+              text={`Network is ${networkEnabled ? 'enabled' : 'disabled'}`}
+              leftIcon={<Icon name="wifi" size={28} />}
+              rightIcon={
+                <Switch 
+                  value={networkEnabled}
+                  onValueChange={() => setNetworkEnabled(!networkEnabled)}
+                  style={{ marginRight: 12 }}
+                  color={primary}
+                />
+              }
+            />
+            <ListItem 
+              onClick={() => history.navigate('/Help')}
+              text="Configure security"
+              leftIcon={<Icon name="shield" size={28} />}
+              rightIcon={<Icon name="chevron-right" size={20} />}
+            />
           </View>
-        </View>
+        </ScrollView>
       </SafeAreaView>
     </>
   );
@@ -85,7 +118,8 @@ const styles = StyleSheet.create({
     padding: 12,
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    height: '100%'
   },
   logo: {
     marginHorizontal: 'auto',
@@ -117,6 +151,15 @@ const styles = StyleSheet.create({
   list: {
     display: 'flex',
     marginTop: 24
+  },
+  moneyIcon: {
+    backgroundColor: '#4aaf06',
+    height: 40,
+    width: 40,
+    borderRadius: 20,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   }
 });
 
